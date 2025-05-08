@@ -2,7 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .container {
@@ -49,8 +49,6 @@ select {
     border: none;
     outline: none;
     background-color: #c4c4c4;
-
-
 }
 
 .features {
@@ -160,3 +158,28 @@ button {
     right: 30px;
     font-size: 18px;
 }
+
+@media(max-width: 480px) {
+    body{
+        height: 70vh;
+    }
+    .quoteBox{
+        width: 450px;
+        
+        margin: 0 10%;
+        border: 2px solid red;
+    }
+    .features{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    
+    }
+    .textToggle{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+  }
