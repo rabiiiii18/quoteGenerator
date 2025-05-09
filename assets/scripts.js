@@ -23,7 +23,23 @@ toggle.addEventListener('click', () => {
 
 
 
-let currentSize = 28;
+let currentSize;
+
+function updateSize() {
+  if (window.innerWidth > 350) {
+    currentSize = 28;
+  } else {
+    currentSize = 20; // <-- example value for smaller screens
+  }
+  console.log('Current size:', currentSize);
+}
+
+// Run once when the page loads
+updateSize();
+
+// Run again every time the window is resized
+window.addEventListener('resize', updateSize);
+
 
 function updateFontSize() {
   quotetext.style.fontSize = `${currentSize}px`;

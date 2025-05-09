@@ -2,6 +2,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10%;
     /* height: 100vh; */
 }
 
@@ -158,16 +159,18 @@ button {
     right: 30px;
     font-size: 18px;
 }
+.textToggle{
+    display: flex;
+    gap: 30px;
+}
 
-@media(max-width: 480px) {
+@media(max-width: 430px) {
     body{
         height: 70vh;
     }
     .quoteBox{
-        width: 450px;
-        
-        margin: 0 10%;
-        border: 2px solid red;
+        width: 100%;
+        margin: 0 5%;
     }
     .features{
         display: flex;
@@ -181,5 +184,10 @@ button {
         display: flex;
         justify-content: space-between;
     }
-    
-  }
+    .quoteHeading{
+    font-size: 28px;
+    }
+    .quote{
+        font-family: 14px;
+    }
+}
