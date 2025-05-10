@@ -1,5 +1,4 @@
 const quotes = [
-  // 🔬 Science
   {
     id: 1,
     category: "science",
@@ -61,7 +60,6 @@ const quotes = [
     author: "Wernher von Braun",
   },
 
-  // ❤️ Love
   {
     id: 11,
     category: "love",
@@ -123,7 +121,6 @@ const quotes = [
     author: "H. Jackson Brown, Jr.",
   },
 
-  // 💪 Motivational
   {
     id: 21,
     category: "motivational",
@@ -185,7 +182,6 @@ const quotes = [
     author: "Arthur Ashe",
   },
 
-  // 💻 Technology
   {
     id: 31,
     category: "technology",
@@ -261,7 +257,7 @@ const author=document.querySelector('.writer')
 const nextBtn=document.querySelector('.next')
 const prevBtn=document.querySelector('.prev')
 const randomBtn=document.querySelector('.random')
-
+const pleaseSelect=document.querySelector('.pleaseSelect')
 
 let filterQuotes = [];
 let quoteIndex = 0;
@@ -269,18 +265,16 @@ let quoteIndex = 0;
 selectValue.addEventListener("change", () => {
   const value = selectValue.value;
   console.log(value);
-
   filterQuotes = []; 
   quoteIndex = 0;     
-
   for (let i = 0; i < quotes.length; i++) {
     if (quotes[i].category === value) {
+      heading.style.display='block'
+      pleaseSelect.style.display='none'
+
       filterQuotes.push(quotes[i]);
     }
   }
-
-  console.log("Filtered quotes:", filterQuotes);
-
   if (filterQuotes.length > 0) {
     display();
   } else {
@@ -312,7 +306,7 @@ nextBtn.addEventListener('click', () => {
 prevBtn.addEventListener('click', () => {
   quoteIndex--;
   if (quoteIndex < 0) {
-    quoteIndex = filterQuotes.length - 1;  // ✅ wrap to last
+    quoteIndex = filterQuotes.length - 1; 
   }
   display();
 });
@@ -332,6 +326,7 @@ toggle.addEventListener("click", () => {
     ball.classList.remove("active");
     container.style.background = "#bbbbbb";
     container.style.color = "black";
+   
   } else {
     ball.style.transform = "translateX(100%)";
     ball.classList.add("active");
